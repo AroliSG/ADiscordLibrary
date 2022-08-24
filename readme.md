@@ -37,4 +37,4 @@ print (toJSON (ADiscord.user));
 also when using the message listener or command listener you can just do
 print (toJSON (message));
 
-if that wasn't enought refer to the [Wiki]()
+if that wasn't enought refer to the [Wiki](https://github.com/AroliSG/ADiscordLibrary/wiki)

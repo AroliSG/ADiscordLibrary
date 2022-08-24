@@ -32,9 +32,9 @@ Remember you can print all client members
 6. ADiscord.roles
 
 once ADiscord is ready you can print all members one by one
-1. print (toJSON (ADiscord.user));
+> print (toJSON (ADiscord.user));
 
 also when using the message listener or command listener you can just do
-1. print (toJSON (message));
+> print (toJSON (message));
 
 if that wasn't enought refer to the [Wiki](https://github.com/AroliSG/ADiscordLibrary/wiki)

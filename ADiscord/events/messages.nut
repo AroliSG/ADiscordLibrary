@@ -1,4 +1,4 @@
-dofile( "scripts/components/ADiscord/events/commands.nut");
+dofile( "scripts/ADiscord/events/commands.nut");
 
 addEventHandler.on ("message", function (message) {
         // will reply back

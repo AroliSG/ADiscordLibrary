@@ -2,7 +2,8 @@
 A Vice City Multiplayer Server Side Library for integrating Discordjs 
  
  ### Requirements
- Lastest stable version of nodejs
+1. Lastest stable version of [nodejs](nodejs.org)
+2. VC MP [Json](https://forum.vc-mp.org/?topic=1479.msg10253#msg10253) module by Crys 
  
  ### Installation and Guide
  ## ADiscord Nodejs
@@ -19,3 +20,21 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
    dofile( "scripts/ADiscord/ADiscord.nut" );
    ADiscord.Init ()
 ```
+
+## Usage
+Remember you can print all client members
+
+ADiscord.user
+ADiscord.application
+ADiscord.guilds
+ADiscord.channels
+ADiscord.emojis
+ADiscord.roles
+
+once ADiscord is ready you can print all members one by one
+print (toJSON (ADiscord.user));
+
+also when using the message listener or command listener you can just do
+print (toJSON (message));
+
+if that wasn't enought refer to the [Wiki]()

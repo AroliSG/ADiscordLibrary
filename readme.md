@@ -24,17 +24,17 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
 ## Usage
 Remember you can print all client members
 
-ADiscord.user
-ADiscord.application
-ADiscord.guilds
-ADiscord.channels
-ADiscord.emojis
-ADiscord.roles
+1. ADiscord.user
+2. ADiscord.application
+3. ADiscord.guilds
+4. ADiscord.channels
+5. ADiscord.emojis
+6. ADiscord.roles
 
 once ADiscord is ready you can print all members one by one
-print (toJSON (ADiscord.user));
+1. print (toJSON (ADiscord.user));
 
 also when using the message listener or command listener you can just do
-print (toJSON (message));
+1. print (toJSON (message));
 
 if that wasn't enought refer to the [Wiki](https://github.com/AroliSG/ADiscordLibrary/wiki)

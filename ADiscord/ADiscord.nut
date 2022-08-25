@@ -1,9 +1,8 @@
-dofile( "scripts/components/ADiscord/modules/parseJson.nut" );
-dofile( "scripts/components/ADiscord/modules/ADLibrary.nut" );
-dofile( "scripts/components/ADiscord/modules/addEventHandler.nut" );
+dofile( "scripts/ADiscord/modules/ADLibrary.nut" );
+dofile( "scripts/ADiscord/modules/addEventHandler.nut" );
     // events
-dofile( "scripts/components/ADiscord/events/messages.nut");
-dofile( "scripts/components/ADiscord/events/commons.nut");
+dofile( "scripts/ADiscord/events/messages.nut");
+dofile( "scripts/ADiscord/events/commons.nut");
 
 class ADiscord {
     localSession            = null;

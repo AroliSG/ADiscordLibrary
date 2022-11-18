@@ -6,7 +6,7 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
 2. VC MP [Json](https://forum.vc-mp.org/?topic=1479.msg10253#msg10253) module by Crys 
  
  ### Installation and Guide
- ## ADiscord Nodejs
+ ## ADiscord Nodejs/Server
  1. npm install using a [cmd/shell] in the root directory
  2. run ADiscord with
    > node ADiscord

@@ -1,0 +1,7 @@
+
+node_modules
+*.cjs
+*.map
+.
+ADiscordServer/package-lock.json
+package-lock.json

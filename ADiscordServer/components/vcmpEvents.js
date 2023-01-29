@@ -3,8 +3,9 @@ const {client,EmbedBuilder}      = require ('./clients/discord');
 const handler       = require ('./clients/handler');
 
 const embed = (parent, channel) => {
-  const Embed = new EmbedBuilder () .setTitle(parent.Title);
+  const Embed = new EmbedBuilder ()
 
+  if (parent.Title) Embed.setTitle(parent.Title);
   if (parent.Author) Embed.setAuthor (parent.Author);
   if (parent.Color) Embed.setColor (parent.Color);
   if (parent.Description) Embed.setDescription (parent.Description);

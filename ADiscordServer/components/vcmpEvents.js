@@ -19,6 +19,7 @@ const embed = (parent, channel) => {
 };
 
 handler.on ('vcmpEvents', (_socket, json) => {
+  try {
     let channel = client.channels.cache.get (json.channelId);
     switch (json.channelEvent) {
       case "reply":
@@ -34,4 +35,12 @@ handler.on ('vcmpEvents', (_socket, json) => {
 
       // client/bot events
     if (json.botEvent)  client.user [json.botEvent] (json.content);
+  }catch (e) {
+    console.log (e)
+  }
+});
+
+
+process.on ('uncaughtException', e => {
+  console.log (e)
 });

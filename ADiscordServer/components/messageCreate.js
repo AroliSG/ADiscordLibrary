@@ -5,6 +5,24 @@ const handler       = require ('./clients/handler');
 handler.on ('messageListener', (socket, prefix) => {
     client.on ('messageCreate', message => {
         if (message.author.bot) return 0;
+
+            // channels
+        let channel = {
+            type: message.channel.type,
+            lastMessageId: message.channel.lastMessageId,
+            rawPosition: message.channel.rawPosition,
+            createdTimestamp: message.channel.createdTimestamp,
+            id: message.channel.id,
+            topic: message.channel.topic,
+            permissionOverwrites: message.channel.permissionOverwrites,
+            guildId: message.channel.guildId,
+            guild: message.channel.guild,
+            parentId: message.channel.parentId,
+            nsfw: message.channel.nsfw,
+            name: message.channel.name,
+            rateLimitPerUser: message.channel.rateLimitPerUser
+        }
+            // message json
         let messageJson = {
             "channelId": message.channelId,
             "guildId": message.guildId,
@@ -27,7 +45,7 @@ handler.on ('messageListener', (socket, prefix) => {
             "cleanContent": message.cleanContent,
             "member": message.member,
             "author": message.author,
-            "channel": message .channel
+            channel
         };
 
         let args = message.content .trim() .split(/ +/g);
@@ -38,7 +56,6 @@ handler.on ('messageListener', (socket, prefix) => {
             messageJson.content = args. join(' ');
             messageJson.prefix  = prefix;
         }
-        console.log (messageJson);
         socket.write ("message*" + JSON.stringify (messageJson));
     });
 });

@@ -15,7 +15,21 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
 1. place ADiscord Folder inside Script
 2. dofile the files
 3. init ADiscord at Server ScriptLoad
-  
+
+### Important to read
+When using ADiscord.user.send or ADiscord.user.messageEmbed outside of a ADiscord event you must be sure ADiscord is running
+```
+onPlayerJoin (player) {
+   1. So, you must provide ADiscord.ready, to make sure is safety to use any function, if not provided can cause a crash intentionally
+   2. this is secure to use
+   if (ADiscord.ready) ADiscord.user.send ("testing", channelId);
+
+   1. Ex of bad use
+   2. this can cause a crash, make sure to use it properly
+   ADiscord.user.send ("testing", channelId);
+}
+```
+
 ```
    dofile( "scripts/ADiscord/ADiscord.nut" );
    ADiscord.Init ()

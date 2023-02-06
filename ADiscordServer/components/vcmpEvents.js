@@ -1,21 +1,24 @@
     // jshint esversion: 11
-const {client,EmbedBuilder}      = require ('./clients/discord');
-const handler       = require ('./clients/handler');
+const {client,EmbedBuilder}       = require ('./clients/discord');
+const handler                     = require ('./clients/handler');
 
 const embed = (parent, channel) => {
-  const Embed = new EmbedBuilder ()
+  try {
+    const Embed = new EmbedBuilder ();
 
-  if (parent.Title) Embed.setTitle(parent.Title);
-  if (parent.Author) Embed.setAuthor (parent.Author);
-  if (parent.Color) Embed.setColor (parent.Color);
-  if (parent.Description) Embed.setDescription (parent.Description);
-  if (parent.Fields) Embed.setFields (parent.Fields);
-  if (parent.Footer) Embed.setFooter (parent.Footer);
-  if (parent.Image) Embed.setImage (parent.Image);
-  if (parent.Thumbnail) Embed.setThumbnail (parent.Thumbnail);
-  if (parent.Timestamp) Embed.setTimestamp (parent.Timestamp);
+    if (parent.Title) Embed.setTitle(parent.Title);
+    if (parent.Author) Embed.setAuthor (parent.Author);
+    if (parent.Color) Embed.setColor (parent.Color);
+    if (parent.Description) Embed.setDescription (parent.Description);
+    if (parent.Fields) Embed.setFields (parent.Fields);
+    if (parent.Footer) Embed.setFooter (parent.Footer);
+    if (parent.Image) Embed.setImage (parent.Image);
+    if (parent.Thumbnail) Embed.setThumbnail (parent.Thumbnail);
+    if (parent.Timestamp) Embed.setTimestamp (parent.Timestamp);
 
-  channel.send({ embeds: [Embed] });
+    channel.send({ embeds: [Embed] });
+  }catch (e) {
+  }
 };
 
 handler.on ('vcmpEvents', (_socket, json) => {
@@ -36,7 +39,6 @@ handler.on ('vcmpEvents', (_socket, json) => {
       // client/bot events
     if (json.botEvent)  client.user [json.botEvent] (json.content);
   }catch (e) {
-    console.log (e)
   }
 });
 

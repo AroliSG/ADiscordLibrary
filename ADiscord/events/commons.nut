@@ -5,7 +5,7 @@ addEventHandler.on ("ready", function () {
     // client.user.setAFK (true);
     print (toJSON (client.user))
         // client is ready
-    if (client.isReady) client.isReady ();
+    client.ready = true;
 });
 
 addEventHandler.on ("error", function (error) {

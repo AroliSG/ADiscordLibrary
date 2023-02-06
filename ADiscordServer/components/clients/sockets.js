@@ -51,7 +51,6 @@ server.addListener ('connection', socket => {
     });
 
     let destroyClient = () => {
-        client.removeAllListeners ();
         console.log (socket.localAddress + " has quit the connection");
     };
 

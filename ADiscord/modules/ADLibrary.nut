@@ -98,6 +98,10 @@ ADLibrary <- {
                 ADiscord.say (toJSON  (obj));
             }
         }
+            // pushing error message to be shown
+        if (data [0]=="error") {
+            parentArray .push (data [1]);
+        }
 
             // send embeds using client
         ADiscord.user.messageEmbed <- function (data, channelId) {

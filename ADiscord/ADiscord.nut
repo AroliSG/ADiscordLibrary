@@ -16,7 +16,7 @@ class ADiscord {
     emojis                  = null;
     application             = null;
     slashCommands           = null;
-    isReady                 = null;
+    ready                   = null;
 
         // commands prefix
     commandPrefix           = "!";

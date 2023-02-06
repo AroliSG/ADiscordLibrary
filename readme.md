@@ -16,24 +16,36 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
 2. dofile the files
 3. init ADiscord at Server ScriptLoad
 
-### Important to read
-When using ADiscord.user.send or ADiscord.user.messageEmbed outside of a ADiscord event you must be sure ADiscord is running
-```
-onPlayerJoin (player) {
-   1. So, you must provide ADiscord.ready, to make sure is safety to use any function, if not provided can cause a crash intentionally
-   2. this is secure to use
-   if (ADiscord.ready) ADiscord.user.send ("testing", channelId);
-
-   1. Ex of bad use
-   2. this can cause a crash, make sure to use it properly
-   ADiscord.user.send ("testing", channelId);
-}
-```
-
 ```
    dofile( "scripts/ADiscord/ADiscord.nut" );
    ADiscord.Init ()
 ```
+
+## Important to read
+1. When using ADiscord.user.send or ADiscord.user.messageEmbed outside of a ADiscord event you must be sure ADiscord is running
+2. So, you must provide ADiscord.ready, to make sure is safety to use any function, if not provided can cause a crash intentionally
+```
+onPlayerJoin (player) {
+      // secure to use
+   if (ADiscord.ready) ADiscord.user.send ("testing", channelId);
+      // can cause crashes
+   ADiscord.user.send ("testing", channelId);
+}
+```
+
+### Another thing to mention, is when using vcmp global variables inside an ADiscord Event, 'Important'
+1. not in all cases, but I encounter few problems when calling vcmp variables.
+2. I suggest using :: on every variable used inside, Ex.
+```
+   addEventHandler.on ("message", function (message) {
+      ::Message ("good :D");
+      Message ("this can cause trouble");
+         // always use :: to make sure the good working of ur server, only when calling vcmp properties/variables
+      ::GetPlayers ();
+   });
+```
+
+
 
 ## Usage
 Remember you can print all client members

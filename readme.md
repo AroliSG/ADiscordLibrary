@@ -9,7 +9,7 @@ A Vice City Multiplayer Server Side Library for integrating Discordjs
  ## ADiscord Nodejs/Server
  1. npm install using a [cmd/shell] in the root directory
  2. run ADiscord with
-   > node ADiscord
+   > node index.js
 
 ## ADiscord Squirrel
 1. place ADiscord Folder inside Script
